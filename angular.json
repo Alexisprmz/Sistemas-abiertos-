@@ -27,19 +27,17 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               {
-                "glob": "**/*",
+                "glob": "/*",
                 "input": "public"
               }
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -91,7 +89,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               {
-                "glob": "**/*",
+                "glob": "/*",
                 "input": "public"
               }
             ],
@@ -103,5 +101,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "eeb777d3-855b-4f00-bbe0-f0045c68cef2"
   }
 }
