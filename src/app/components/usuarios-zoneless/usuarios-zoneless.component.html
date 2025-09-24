@@ -1,0 +1,130 @@
+<h2>Usuarios Zoneless</h2>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow-lg border-0">
+        <div class="card-header bg-primary text-white text-center">
+          <h1 class="mb-0">
+            <i class="bi bi-person-circle"></i> Componente Usuario
+          </h1>
+        </div>
+
+        <div class="card-body p-4">
+          <div class="row text-center mb-4">
+            <div class="col-12 mb-3">
+              <h2 class="text-primary border-bottom pb-2">
+                <i class="bi bi-person"></i> Nombre
+              </h2>
+              <p class="fs-5 text-dark">{{ nombre() }}</p>
+            </div>
+
+            <div class="col-12 mb-3">
+              <h2 class="text-success border-bottom pb-2">
+                <i class="bi bi-calendar"></i> Edad
+              </h2>
+              <p class="fs-5 text-dark">{{ edad() }} años</p>
+            </div>
+
+            <div class="col-12 mb-3">
+              <h2 class="text-info border-bottom pb-2">
+                <i class="bi bi-type"></i> Nombre Capitalizado
+              </h2>
+              <p class="fs-5 text-dark">{{ nombreCapitalizado() }}</p>
+            </div>
+          </div>
+
+          <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+            <button
+              class="btn btn-primary btn-lg me-md-2"
+              data-bs-toggle="modal"
+              data-bs-target="#modalCambiarNombre"
+            >
+              <i class="bi bi-pencil-square"></i> Cambiar Nombre
+            </button>
+            <button
+              class="btn btn-success btn-lg me-md-2"
+              data-bs-toggle="modal"
+              data-bs-target="#modalCambiarEdad"
+            >
+              <i class="bi bi-calendar-plus"></i> Cambiar Edad
+            </button>
+            <button
+              class="btn btn-warning btn-lg"
+              data-bs-toggle="modal"
+              data-bs-target="#modalReset"
+            >
+              <i class="bi bi-arrow-clockwise"></i> Reset
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalCambiarNombre" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title">
+          <i class="bi bi-person-fill"></i> Cambiar Nombre
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <input #nombreInput type="text" class="form-control form-control-lg" placeholder="Ingresa el nuevo nombre">
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button class="btn btn-primary" (click)="cambiarNombre(nombreInput.value)" data-bs-dismiss="modal">
+          Guardar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalCambiarEdad" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title">
+          <i class="bi bi-calendar-fill"></i> Cambiar Edad
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <input #edadInput type="number" class="form-control form-control-lg" placeholder="Ingresa la nueva edad">
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button class="btn btn-success" (click)="cambiarEdad(edadInput.value)" data-bs-dismiss="modal">
+          Guardar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalReset" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-warning">
+        <h5 class="modal-title text-dark">
+          <i class="bi bi-arrow-clockwise"></i> Cambiar Nombre Capitalizado
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <input #nombreCapInput type="text" class="form-control form-control-lg" placeholder="Ingresa el nombre capitalizado">
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button class="btn btn-warning" (click)="cambiarNombreCapitalizado(nombreCapInput.value)" data-bs-dismiss="modal">
+          Guardar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

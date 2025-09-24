@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
     import { CounterPageComponent } from './components/counter/counter-page.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
+import { UsuariosZonelessComponent } from './components/usuarios-zoneless/usuarios-zoneless.component';
 
 
     export const routes: Routes = [
@@ -13,5 +14,8 @@ import { UsuarioComponent } from './components/usuario/usuario.component';
     {
          path: 'usuario', component: UsuarioComponent
     },
+    {
+     path:"usuarioZoneless", component:UsuariosZonelessComponent
+    }
 
     ];
