@@ -28,4 +28,6 @@ export class UsuariosZonelessComponent {
     this.nombre.set(nuevoNombreCap); 
   }
 
+  
+
 }
