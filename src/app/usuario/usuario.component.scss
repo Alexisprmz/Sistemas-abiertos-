@@ -1,19 +1,7 @@
-.modal {
-  background: rgba(0, 0, 0, 0.6); // overlay oscuro
+.card {
+  border-radius: 1rem;
 }
 
-.modal-content {
-  animation: pop 0.3s ease-out;
-  border-radius: 12px;
-}
-
-@keyframes pop {
-  from {
-    transform: scale(0.7);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+h2 {
+  font-size: 1.3rem;
 }

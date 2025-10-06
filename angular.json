@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "sistemas-abiertos": {
+    "mi-proyecto-angular19": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,29 +17,28 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/sistemas-abiertos",
+            "outputPath": "dist/mi-proyecto-angular19",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
-              "zone.js"
+              "zone.js",
+              "@angular/localize/init"
             ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
-                "glob": "**/*",
+                "glob": "/*",
                 "input": "public"
               }
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -69,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "sistemas-abiertos:build:production"
+              "buildTarget": "mi-proyecto-angular19:build:production"
             },
             "development": {
-              "buildTarget": "sistemas-abiertos:build:development"
+              "buildTarget": "mi-proyecto-angular19:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -85,13 +84,14 @@
           "options": {
             "polyfills": [
               "zone.js",
-              "zone.js/testing"
+              "zone.js/testing",
+              "@angular/localize/init"
             ],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
-                "glob": "**/*",
+                "glob": "/*",
                 "input": "public"
               }
             ],
@@ -105,6 +105,6 @@
     }
   },
   "cli": {
-    "analytics": "1c2a5327-d60d-4d48-abdc-bf13321a0ce8"
+    "analytics": "eeb777d3-855b-4f00-bbe0-f0045c68cef2"
   }
 }

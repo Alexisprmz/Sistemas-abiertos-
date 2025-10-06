@@ -7,7 +7,7 @@ import { DragonballPageComponent } from '../../dragonball-page/dragonball-page.c
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [CommonModule, FormsModule, NavbarComponent, DragonballPageComponent],
+  imports: [CommonModule, FormsModule, DragonballPageComponent],
   templateUrl: './hero-page.component.html',
   styleUrls: ['./hero-page.component.scss']
 })

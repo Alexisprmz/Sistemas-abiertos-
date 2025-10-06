@@ -1,17 +1,28 @@
-<div class="card shadow-sm p-3">
-    <h3 class="mb-3">Listado</h3>
-    <ol class="list-group list-group-numbered">
-    @for (character of characters; track character.id) {
+<div class="card shadow-lg border-0">
+  <div class="card-header bg-primary bg-gradient text-white">
+    <h5 class="mb-0"><i class="bi bi-people-fill"></i> Listado de personajes</h5>
+  </div>
+
+  <div class="card-body">
+    <div class="list-group">
+      @for (character of characters; track character.id) {
         @if (character.power > 4000) {
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            <strong>Nombre:</strong> {{ character.name }}<br>
-            <strong [class.text-danger]="character.power > 8000" [class.text-primary]="character.power <= 8000">Poder: {{ character.power }}</strong>
-        </li>
-        }@else {
-        <li class="list-group-item d-flex align-items-center">
-            <strong>Poder demasiado bajo...</strong>
-        </li>
+          <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            <div>
+              <h6 class="mb-1">{{ character.name }}</h6>
+              <small [class.text-danger]="character.power > 8000"
+                     [class.text-primary]="character.power <= 8000">
+                Poder: {{ character.power }}
+              </small>
+            </div>
+            <span class="badge rounded-pill bg-primary">ID {{ character.id }}</span>
+          </div>
+        } @else {
+          <div class="list-group-item list-group-item-light fst-italic text-muted">
+            Sin datos...
+          </div>
         }
-    }
-    </ol>
+      }
+    </div>
+  </div>
 </div>
